@@ -1,6 +1,6 @@
 require("spec_helper")
 
-describe(Recipe) do
+
 
   # it("add a recipe object") do
   #     test_recipe = Recipe.create({:name => "Grill Cheese Sandwich"})
@@ -9,7 +9,6 @@ describe(Recipe) do
   #     expect(recipe.tags()).to(eq([tag1, tag2]))
   #   end
 
-
     describe(Recipe) do
       it { should have_many(:tags) }
     end
@@ -17,7 +16,3 @@ describe(Recipe) do
     describe(Recipe) do
       it { should have_many(:categories) }
     end
-    
-
-
-end
