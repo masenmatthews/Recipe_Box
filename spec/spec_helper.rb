@@ -2,6 +2,9 @@ require("rspec")
 require("pg")
 require("sinatra/activerecord")
 require("recipe")
+require("category")
+require("tag")
+require("shoulda-matchers")
 
 #
 # RSpec.configure do |config|
