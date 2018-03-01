@@ -24,8 +24,7 @@ end
 post('/recipes') do
   name = params[:name]
   ingredients = params[:ingredients]
-  instructions = params.fetch[:instructions]
-  #binding.pry
+  instructions = params[:instructions]
   recipe = Recipe.new({:name => name, :ingredients => ingredients, :instructions => instructions, :id => nil})
   recipe.save()
   @recipes = Recipe.all()
@@ -37,15 +36,14 @@ get('/recipes') do
   erb(:recipe_list)
 end
 
-post('/clear') do
-  Recipe.clear
-  redirect '/'
-  erb(:index)
-end
+# get("/recipe_list/:id") do
+#   @recipe = Recipe.find(params[:id])
+#   erb(:recipe_edit)
+# end
 
-get("/recipe_list/:id") do
-  @recipe = Recipe.find(params[:id])
-  erb(:recipe_edit)
+get("/recipe_detail/:id") do
+  @recipes = Recipe.find(params[:id])
+  erb(:recipe_detail)
 end
 
 patch("/recipe_list/:id") do
@@ -53,4 +51,11 @@ patch("/recipe_list/:id") do
   @recipe = Recipe.find(params[:id])
   @recipe.update({:name => name})
   erb(:recipe_edit)
+end
+
+delete('/recipe_detail/:id') do
+  @recipe = Recipe.find(params[:id])
+  @recipe.delete()
+  @recipes = Recipe.all()
+  erb(:index)
 end

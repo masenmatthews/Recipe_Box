@@ -1,2 +1,13 @@
 <h3> Recipe detail </h3>
-<%= @recipes.name() %>
+Title: <%= @recipes.name() %> <br>
+Ingredients: <%= @recipes.ingredients() %> <br>
+Instructions: <%= @recipes.instructions() %> <br>
+<br>
+
+<form action="/recipe_detail/<%= @recipes.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" name="button">Delete list</button>
+</form>
+
+
+<p><a href="/">Return to Home Page</a></p>
