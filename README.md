@@ -12,7 +12,7 @@
 
 
 ## User Expectations
-1. Add a favorite recipe with ingredients and instructions.
+1. Add a favorite recipe with ingredients and instructions. (done?)
 2. Add a tag to any recipes with different categories (many-to-many relationship between tags and categories).
 3. The ability to update recipes.
 4. The ability to delete recipes.
