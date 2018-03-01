@@ -7,10 +7,19 @@
 ## Description
 #### recipe_box is an app to update recipes, instructions and ingredients.
 
+## Backend specs
+1. TBD
+
 
 ## User Expectations
-1. TBD
-2. TBD
+1. Add a favorite recipe with ingredients and instructions.
+2. Add a tag to any recipes with different categories (many-to-many relationship between tags and categories).
+3. The ability to update recipes.
+4. The ability to delete recipes.
+5. The ability to rate recipes.
+6. List recipes, from highest (top) to lowest rating.
+7. View all recipes the use a certain ingredient.
+
 
 ## Setup/Installation Requirements
 
