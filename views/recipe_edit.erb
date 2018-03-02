@@ -1,12 +1,12 @@
-<h2>Update Recipe <%= @recipe.name() %></h2>
+<h2>Update Recipe Title: <%= @recipe.name() %></h2>
 
-<form action="/recipe_list/<%= @recipe.id() %>" method="post">
+<form action="/recipe_edit/<%= @recipe.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
 
-  <label for="name">Edit your recipe name:</label>
+  <label for="name">Edit your recipe title name:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit">Update recipe title</button>
 </form>
 
 <p><a href="/">Return to Home Page</a></p>

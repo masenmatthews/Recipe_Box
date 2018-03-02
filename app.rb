@@ -36,21 +36,9 @@ get('/recipes') do
   erb(:recipe_list)
 end
 
-# get("/recipe_list/:id") do
-#   @recipe = Recipe.find(params[:id])
-#   erb(:recipe_edit)
-# end
-
 get("/recipe_detail/:id") do
   @recipes = Recipe.find(params[:id])
   erb(:recipe_detail)
-end
-
-patch("/recipe_list/:id") do
-  name = params[:name]
-  @recipe = Recipe.find(params[:id])
-  @recipe.update({:name => name})
-  erb(:recipe_edit)
 end
 
 delete('/recipe_detail/:id') do
@@ -58,4 +46,17 @@ delete('/recipe_detail/:id') do
   @recipe.delete()
   @recipes = Recipe.all()
   erb(:index)
+end
+
+get("/recipe_edit/:id") do
+  id = params.fetch("id").to_i()
+  @recipe = Recipe.find(params[:id])
+  erb(:recipe_edit)
+end
+
+patch("/recipe_edit/:id") do
+  name = params[:name]
+  @recipe = Recipe.find(params[:id])
+  @recipe.update({:name => name})
+  erb(:recipe_edit)
 end
